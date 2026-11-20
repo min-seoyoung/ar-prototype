@@ -9,7 +9,7 @@
     html, body { margin: 0; height: 100%; font-family: system-ui, sans-serif; background: #f4f3ef; }
     model-viewer { width: 100%; height: 100%; }
     .panel {
-      position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%);
+      position: absolute; left: 50%; top: 16px; transform: translateX(-50%);
       width: min(92vw, 420px); box-sizing: border-box;
       background: rgba(255,255,255,0.92); border-radius: 14px; padding: 12px 16px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.15); color: #222;
@@ -23,6 +23,12 @@
     }
     button.active { background: #222; color: #fff; }
     .credit { font-size: 11px; color: #666; margin-top: 8px; }
+    .ar-btn {
+      position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%);
+      flex: none; width: auto; padding: 14px 22px; border: none; border-radius: 999px;
+      background: #222; color: #fff; font-size: 16px; font-weight: 600;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    }
   </style>
 </head>
 <body>
@@ -48,8 +54,10 @@
         <button id="realBtn" type="button">Real size (34 cm)</button>
         <button id="giantBtn" type="button">Giant (2 m)</button>
       </div>
-      <div class="credit">Photogrammetry scan by Maja S. Min (PhotoCatch, Blender). Pick a size, then tap the AR button.</div>
+      <div class="credit">Photogrammetry scan by Maja S. Min (PhotoCatch, Blender). Pick a size, then tap "View in your room".</div>
     </div>
+
+    <button slot="ar-button" class="ar-btn" type="button">View in your room (AR)</button>
   </model-viewer>
 
   <script>
